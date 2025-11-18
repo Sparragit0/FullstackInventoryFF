@@ -33,12 +33,24 @@ public class ItemInventario {
 
     @PrePersist
     public void alCrear() {
-
+        this.fechaCreacion = LocalDateTime.now();
+        this.fechaActualizacion = LocalDateTime.now();
+        
+        if (this.estado == null) {
+            this.estado = "ACTIVO";
+        }
+        if (this.cantidad == null) {
+            this.cantidad = 0;
+        }
+        if (this.stockMinimo == null) {
+            this.stockMinimo = 0;
+        }
     }
 
     @PreUpdate
     private void alActualizar() {
-
+        this.fechaActualizacion = LocalDateTime.now();
     }
 
 }
+//Hace falta alterar las columnas nulables y/o unicas
