@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/api/inventario")
-@CrossOrigin(origins = "http://localhost:5173",
-    "http://3.216.102.70")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ItemInventarioController {
     private final ItemInventarioService itemInventarioService;
     
